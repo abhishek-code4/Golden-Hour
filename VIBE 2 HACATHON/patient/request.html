@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Ambulance — Golden Hour</title>
+  <meta name="description" content="One-tap emergency ambulance request with GPS location detection">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/patient.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+  <div class="request-page">
+    <div class="request-layout">
+      <!-- Map Side -->
+      <div class="request-map-side">
+        <div id="request-map"></div>
+      </div>
+
+      <!-- Form Side -->
+      <div class="request-form-side">
+        <div class="request-form-header">
+          <h2>🚨 Request Ambulance</h2>
+          <p>Fill in details for faster response. GPS location is auto-detected.</p>
+        </div>
+
+        <!-- Location Status -->
+        <div class="location-detect detecting" id="location-status">
+          <span class="location-icon">📍</span>
+          <div>
+            <strong>Detecting your location...</strong>
+            <div style="font-size:0.8rem;color:var(--text-muted)" id="location-address">Please allow location access</div>
+          </div>
+        </div>
+
+        <form class="request-form" id="request-form" onsubmit="submitRequest(event)">
+          <!-- Patient Details -->
+          <div class="form-group">
+            <label class="form-label">Patient Name</label>
+            <input type="text" class="form-input" id="patient-name" placeholder="Full name" required>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div class="form-group">
+              <label class="form-label">Age</label>
+              <input type="number" class="form-input" id="patient-age" placeholder="Age" min="0" max="120">
+            </div>
+            <div class="form-group">
+              <label class="form-label">No. of Patients</label>
+              <input type="number" class="form-input" id="num-patients" value="1" min="1" max="10">
+            </div>
+          </div>
+
+          <!-- Emergency Type -->
+          <div class="form-group">
+            <label class="form-label">Type of Emergency</label>
+            <div class="emergency-type-grid" id="emergency-type-grid">
+              <!-- Filled by JS -->
+            </div>
+          </div>
+
+          <!-- Medical Condition -->
+          <div class="form-group">
+            <label class="form-label">Known Medical Condition (Optional)</label>
+            <textarea class="form-textarea" id="medical-condition" placeholder="Allergies, blood group, medications, etc."></textarea>
+          </div>
+
+          <!-- Hospital Preference -->
+          <div class="form-group">
+            <label class="form-label">Preferred Hospital Type</label>
+            <select class="form-input" id="hospital-preference" style="background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); border-radius: 8px; width: 100%; padding: 12px;">
+              <option value="Government" selected>🏛️ Government Hospital (Recommended - Affordable & Trauma Specialist)</option>
+              <option value="Private">🏥 Private Hospital (Specialized Care)</option>
+              <option value="Any">🌐 Any (Nearest Available)</option>
+            </select>
+          </div>
+
+          <!-- Manual Address -->
+          <div class="form-group">
+            <label class="form-label">Address / Landmark (Optional)</label>
+            <input type="text" class="form-input" id="manual-address" placeholder="Near India Gate, Gate No. 3...">
+          </div>
+
+          <!-- Submit -->
+          <div class="sos-submit-wrapper">
+            <button type="submit" class="sos-btn" id="submit-sos">
+              🚑
+              SEND SOS
+              <span>Dispatch Now</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../js/hospitals-india.js?v=1"></script>
+  <script src="../js/ambulances-india.js?v=1"></script>
+  <script src="../js/data.js?v=5"></script>
+  <script src="../js/app.js?v=5"></script>
+  <script src="../js/map.js?v=5"></script>
+  <script src="../js/patient-request.js?v=5"></script>
+</body>
+</html>

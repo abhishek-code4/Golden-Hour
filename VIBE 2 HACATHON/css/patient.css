@@ -1,0 +1,319 @@
+/* ============================================================
+   GOLDEN HOUR — Patient Pages Styles
+   ============================================================ */
+
+/* ── Request Page ── */
+.request-page {
+  padding-top: 64px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.request-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 64px);
+}
+
+.request-map-side {
+  position: relative;
+}
+
+.request-map-side #request-map {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+
+.request-form-side {
+  padding: var(--space-2xl);
+  overflow-y: auto;
+  max-height: calc(100vh - 64px);
+}
+
+.request-form-header {
+  margin-bottom: var(--space-xl);
+}
+
+.request-form-header h2 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.request-form-header p {
+  color: var(--text-secondary);
+  margin-top: var(--space-xs);
+  font-size: 0.9rem;
+}
+
+.request-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.location-detect {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: rgba(67, 160, 71, 0.1);
+  border: 1px solid rgba(67, 160, 71, 0.3);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+}
+
+.location-detect.detecting {
+  background: rgba(255, 143, 0, 0.1);
+  border-color: rgba(255, 143, 0, 0.3);
+}
+
+.location-detect.error {
+  background: rgba(229, 57, 53, 0.1);
+  border-color: rgba(229, 57, 53, 0.3);
+}
+
+.location-icon {
+  font-size: 1.5rem;
+  animation: sosPulse 2s infinite;
+}
+
+/* ── Emergency Type Grid ── */
+.emergency-type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.emergency-type-option {
+  position: relative;
+}
+
+.emergency-type-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.emergency-type-option label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--bg-tertiary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 0.85rem;
+}
+
+.emergency-type-option label:hover {
+  border-color: var(--border-medium);
+}
+
+.emergency-type-option input:checked + label {
+  border-color: var(--emergency-red);
+  background: rgba(229, 57, 53, 0.1);
+  color: #FF8A80;
+}
+
+.emergency-type-option .type-icon {
+  font-size: 1.3rem;
+}
+
+/* ── SOS Submission ── */
+.sos-submit-wrapper {
+  text-align: center;
+  padding: var(--space-lg) 0;
+}
+
+.sos-submit-wrapper .sos-btn {
+  width: 160px;
+  height: 160px;
+  font-size: 1.4rem;
+  margin: 0 auto;
+}
+
+/* ══════════════════════════════════════════════════════ */
+/* TRACKING PAGE */
+/* ══════════════════════════════════════════════════════ */
+
+.track-page {
+  padding-top: 64px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.track-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  min-height: calc(100vh - 64px);
+}
+
+.track-map-side {
+  position: relative;
+}
+
+.track-map-side #track-map {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+.track-info-side {
+  padding: var(--space-xl);
+  overflow-y: auto;
+  max-height: calc(100vh - 64px);
+  border-left: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+}
+
+/* ── Status Header ── */
+.track-status-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.track-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: var(--space-md);
+}
+
+.track-status-badge.status-pending {
+  background: rgba(255, 143, 0, 0.15);
+  color: #FFB74D;
+  border: 1px solid rgba(255, 143, 0, 0.3);
+}
+
+.track-status-badge.status-assigned,
+.track-status-badge.status-en-route {
+  background: rgba(30, 136, 229, 0.15);
+  color: #42A5F5;
+  border: 1px solid rgba(30, 136, 229, 0.3);
+}
+
+.track-status-badge.status-arriving {
+  background: rgba(229, 57, 53, 0.15);
+  color: #FF5252;
+  border: 1px solid rgba(229, 57, 53, 0.3);
+  animation: emergencyPulse 1.5s infinite;
+}
+
+.track-status-badge.status-reached,
+.track-status-badge.status-completed {
+  background: rgba(67, 160, 71, 0.15);
+  color: #66BB6A;
+  border: 1px solid rgba(67, 160, 71, 0.3);
+}
+
+/* ── ETA Display ── */
+.eta-display {
+  text-align: center;
+  padding: var(--space-lg);
+  background: rgba(30, 136, 229, 0.08);
+  border: 1px solid rgba(30, 136, 229, 0.2);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.eta-value {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--medical-blue);
+  line-height: 1;
+}
+
+.eta-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* ── Driver Card ── */
+.driver-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+}
+
+.driver-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--gradient-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.driver-info h5 {
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.driver-info p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.driver-call {
+  margin-left: auto;
+}
+
+/* ── No Active Request ── */
+.no-request {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: var(--space-2xl);
+}
+
+.no-request-icon {
+  font-size: 4rem;
+  margin-bottom: var(--space-lg);
+  opacity: 0.6;
+}
+
+.no-request h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.no-request p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+  max-width: 400px;
+}
+
+@media (max-width: 900px) {
+  .request-layout,
+  .track-layout {
+    grid-template-columns: 1fr;
+  }
+  .request-map-side,
+  .track-map-side {
+    height: 300px;
+  }
+  .track-info-side {
+    border-left: none;
+    border-top: 1px solid var(--border-subtle);
+    max-height: none;
+  }
+}

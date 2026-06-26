@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Hour — Reach Help Faster, Save More Lives</title>
+  <meta name="description" content="Emergency ambulance dispatch platform that helps patients get treatment within the golden hour. One-tap SOS, smart dispatch, live tracking, and hospital coordination.">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- HERO SECTION -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="status-dot emergency"></span>
+        Emergency Response System — Active 24/7
+      </div>
+
+      <h1 class="hero-title">
+        Reach Help Faster in the<br>
+        <span class="highlight">Golden Hour</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        One-tap SOS → Nearest ambulance dispatched → Live GPS tracking → Hospital ready before you arrive. Every second counts.
+      </p>
+
+      <div class="hero-actions">
+        <div class="hero-sos-wrapper">
+          <div class="hero-sos-ring"></div>
+          <button class="sos-btn" id="hero-sos-btn" onclick="handleHeroSOS()">
+            🚨
+            SOS
+            <span>Request Ambulance</span>
+          </button>
+        </div>
+
+        <div class="hero-quick-steps">
+          <span>📱 One-Tap SOS</span>
+          <span class="step-arrow">→</span>
+          <span>🚑 Nearest Ambulance</span>
+          <span class="step-arrow">→</span>
+          <span>📍 Live Tracking</span>
+          <span class="step-arrow">→</span>
+          <span>🏥 Hospital Ready</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- STATS BAR -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="reveal">
+          <div class="stat-number" data-count="8500">0</div>
+          <div class="stat-label">Lives Saved</div>
+        </div>
+        <div class="reveal">
+          <div class="stat-number" data-count="8">0</div>
+          <div class="stat-label">Avg Response (min)</div>
+        </div>
+        <div class="reveal">
+          <div class="stat-number" data-count="150">0</div>
+          <div class="stat-label">Ambulances Active</div>
+        </div>
+        <div class="reveal">
+          <div class="stat-number" data-count="45">0</div>
+          <div class="stat-label">Partner Hospitals</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- HOW IT WORKS -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section class="section how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>How It Works</h2>
+        <p>Four simple steps from emergency to hospital — powered by smart dispatch technology</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-icon">
+            🆘
+            <span class="step-number">1</span>
+          </div>
+          <h4 class="step-title">One-Tap SOS</h4>
+          <p class="step-desc">Press the emergency button. Your GPS location is auto-detected and sent instantly to our dispatch center.</p>
+        </div>
+
+        <div class="step-card reveal">
+          <div class="step-icon">
+            📡
+            <span class="step-number">2</span>
+          </div>
+          <h4 class="step-title">Smart Dispatch</h4>
+          <p class="step-desc">Our AI finds the nearest available ambulance based on distance, traffic, and the type of emergency.</p>
+        </div>
+
+        <div class="step-card reveal">
+          <div class="step-icon">
+            📍
+            <span class="step-number">3</span>
+          </div>
+          <h4 class="step-title">Live Tracking</h4>
+          <p class="step-desc">Track the ambulance in real-time on a live map. See ETA, driver details, and get status notifications.</p>
+        </div>
+
+        <div class="step-card reveal">
+          <div class="step-icon">
+            🏥
+            <span class="step-number">4</span>
+          </div>
+          <h4 class="step-title">Hospital Ready</h4>
+          <p class="step-desc">The hospital receives your details and ETA in advance. Doctors and equipment are ready when you arrive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- GOLDEN HOUR SECTION -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section class="section golden-section" id="golden-hour">
+    <div class="container">
+      <div class="golden-content">
+        <div class="golden-visual reveal">
+          <div class="golden-clock">
+            <div class="golden-clock-value">60</div>
+            <div class="golden-clock-label">Minutes</div>
+          </div>
+        </div>
+
+        <div class="golden-stats reveal">
+          <h2>Why the <span class="text-gradient-red">Golden Hour</span> Matters</h2>
+          <p style="color:var(--text-secondary);margin: var(--space-md) 0 var(--space-xl)">The first 60 minutes after a traumatic injury are the most critical for survival. Quick medical intervention during this window dramatically increases survival rates.</p>
+
+          <div class="golden-stat-item">
+            <div class="golden-stat-icon">⏱️</div>
+            <div>
+              <h5>30% Higher Survival Rate</h5>
+              <p class="text-muted" style="font-size:0.85rem">Patients treated within the golden hour have significantly better outcomes than those who experience delays.</p>
+            </div>
+          </div>
+
+          <div class="golden-stat-item">
+            <div class="golden-stat-icon">🚑</div>
+            <div>
+              <h5>Average Delay: 45 Minutes</h5>
+              <p class="text-muted" style="font-size:0.85rem">In Indian cities, ambulance delays average 45 minutes. We cut this to under 10 minutes with smart dispatch.</p>
+            </div>
+          </div>
+
+          <div class="golden-stat-item">
+            <div class="golden-stat-icon">💚</div>
+            <div>
+              <h5>Pre-Hospital Care Saves Lives</h5>
+              <p class="text-muted" style="font-size:0.85rem">Paramedic care during transit and hospital pre-alerting can reduce mortality by up to 25%.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- FEATURES SECTION -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section class="section features-section" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Built for Everyone in the Emergency Chain</h2>
+        <p>Whether you're a patient, a hospital, or an ambulance operator — Golden Hour has you covered.</p>
+      </div>
+
+      <div class="features-tabs reveal">
+        <button class="feature-tab active" onclick="showFeatureTab('patients', this)">👤 For Patients</button>
+        <button class="feature-tab" onclick="showFeatureTab('hospitals', this)">🏥 For Hospitals</button>
+        <button class="feature-tab" onclick="showFeatureTab('operators', this)">🚑 For Operators</button>
+      </div>
+
+      <div id="features-content">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- FUTURE FEATURES -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section class="section" style="background:var(--bg-secondary)">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Future Scope & Advanced Features</h2>
+        <p>What's coming next to further reduce emergency response times</p>
+      </div>
+
+      <div class="grid grid-3 reveal">
+        <div class="glass-card" style="text-align:center">
+          <div style="font-size:3rem;margin-bottom:var(--space-md)">📊</div>
+          <h4>Real-Time Vitals</h4>
+          <p class="text-muted" style="font-size:0.9rem;margin-top:var(--space-sm)">Monitor patient heart rate, BP, and SpO2 in the ambulance and share with the hospital in real-time.</p>
+        </div>
+        <div class="glass-card" style="text-align:center">
+          <div style="font-size:3rem;margin-bottom:var(--space-md)">📹</div>
+          <h4>Telemedicine Link</h4>
+          <p class="text-muted" style="font-size:0.9rem;margin-top:var(--space-sm)">Audio/video connection between paramedic and hospital doctor for expert guidance during transit.</p>
+        </div>
+        <div class="glass-card" style="text-align:center">
+          <div style="font-size:3rem;margin-bottom:var(--space-md)">🤖</div>
+          <h4>AI Triage</h4>
+          <p class="text-muted" style="font-size:0.9rem;margin-top:var(--space-sm)">AI-powered severity assessment to prioritize critical cases and optimize ambulance allocation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- CTA SECTION -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content reveal">
+        <h2 class="cta-title">Every Second Counts.<br>Start Saving Lives Today.</h2>
+        <p class="cta-subtitle">Login to your role and experience the complete emergency response workflow.</p>
+        <a href="login.html" class="btn btn-emergency" style="margin-top:var(--space-lg)">🚑 Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- FOOTER -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          🚑 Golden<span style="color:var(--emergency-red)">Hour</span>
+        </div>
+        <div class="footer-links">
+          <a href="#features" class="footer-link">Features</a>
+          <a href="#how-it-works" class="footer-link">How It Works</a>
+          <a href="#golden-hour" class="footer-link">Golden Hour</a>
+          <a href="login.html" class="footer-link">Login</a>
+        </div>
+        <div style="color:var(--text-muted);font-size:0.8rem">
+          © 2026 GoldenHour. The Last Minutes Life Saver.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/hospitals-india.js?v=1"></script>
+  <script src="js/ambulances-india.js?v=1"></script>
+  <script src="js/data.js?v=5"></script>
+  <script src="js/app.js?v=5"></script>
+  <script src="js/home.js?v=5"></script>
+</body>
+</html>

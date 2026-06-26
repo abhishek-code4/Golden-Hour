@@ -1,0 +1,205 @@
+/* ============================================================
+   GOLDEN HOUR — Hospital Dashboard Styles
+   ============================================================ */
+
+.hospital-page {
+  padding-top: 64px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.hospital-header {
+  padding: var(--space-xl) var(--space-xl) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.hospital-header h2 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.hospital-stats {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--space-xl);
+}
+
+.hospital-stat-card {
+  flex: 1;
+  background: var(--gradient-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: center;
+  min-width: 140px;
+}
+
+.hospital-stat-card .stat-value {
+  font-size: 2rem;
+}
+
+.hospital-stat-card .stat-label {
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+/* ── Incoming Patients ── */
+.incoming-section {
+  padding: 0 var(--space-xl) var(--space-xl);
+}
+
+.incoming-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: var(--space-lg);
+}
+
+.patient-card {
+  background: var(--gradient-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.patient-card:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-md);
+}
+
+.patient-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.patient-card-top .emergency-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.patient-card-body {
+  padding: var(--space-lg);
+}
+
+.patient-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.patient-info-item {
+  font-size: 0.85rem;
+}
+
+.patient-info-item .label {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.patient-info-item .value {
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* ── Mini Map ── */
+.patient-mini-map {
+  height: 150px;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+/* ── Preparation Checklist ── */
+.prep-checklist {
+  margin-top: var(--space-md);
+}
+
+.prep-checklist h5 {
+  font-size: 0.85rem;
+  margin-bottom: var(--space-sm);
+  color: var(--text-secondary);
+}
+
+.prep-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 6px 0;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.prep-item.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.prep-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.prep-item.done .prep-check {
+  background: var(--success-green);
+  border-color: var(--success-green);
+  color: white;
+}
+
+/* ── Patient Card Actions ── */
+.patient-card-actions {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ── Empty State ── */
+.hospital-empty {
+  text-align: center;
+  padding: var(--space-4xl);
+  color: var(--text-muted);
+}
+
+.hospital-empty-icon {
+  font-size: 4rem;
+  margin-bottom: var(--space-lg);
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .hospital-stats {
+    flex-direction: column;
+  }
+  .incoming-grid {
+    grid-template-columns: 1fr;
+  }
+  .patient-info-grid {
+    grid-template-columns: 1fr;
+  }
+}

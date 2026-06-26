@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — Golden Hour</title>
+  <meta name="description" content="Fleet management, analytics, and driver performance dashboard">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+  <div class="admin-page">
+    <div class="admin-header">
+      <h2>⚙️ Admin Dashboard</h2>
+      <div style="display:flex;gap:var(--space-sm)">
+        <button class="btn btn-sm btn-primary" onclick="showAddAmbulanceModal()">+ Add Ambulance</button>
+        <button class="btn btn-sm btn-outline" onclick="GoldenHourData.resetAll(); location.reload()">🔄 Reset Data</button>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="admin-stats" id="admin-stats">
+      <!-- Filled by JS -->
+    </div>
+
+    <!-- Content Grid -->
+    <div class="admin-content">
+      <!-- Fleet Management -->
+      <div class="fleet-section">
+        <div class="fleet-header">
+          <h3>🚑 Fleet Management</h3>
+          <span style="font-size:0.85rem;color:var(--text-muted)" id="fleet-count"></span>
+        </div>
+        <div class="table-wrapper">
+          <table class="data-table" id="fleet-table">
+            <thead>
+              <tr>
+                <th>Vehicle</th>
+                <th>Type</th>
+                <th>Driver</th>
+                <th>Status</th>
+                <th>Fuel</th>
+                <th>Trips</th>
+                <th>Avg Response</th>
+                <th>Last Maint.</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="fleet-body">
+              <!-- Filled by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="admin-grid">
+        <!-- Peak Hours Chart -->
+        <div class="chart-container">
+          <h4>📊 Peak Hours (Trips per Hour)</h4>
+          <div class="bar-chart" id="peak-chart">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+
+        <!-- Driver Performance -->
+        <div class="chart-container">
+          <h4>👨‍✈️ Driver Performance</h4>
+          <div class="performance-grid" id="performance-grid">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Analytics Summary -->
+      <div class="chart-container" style="margin-top:var(--space-lg)">
+        <h4>📈 Golden Hour Success Rate</h4>
+        <div style="display:flex;align-items:center;gap:var(--space-xl);margin-top:var(--space-lg)">
+          <div style="text-align:center;flex:1">
+            <div style="font-family:var(--font-display);font-size:4rem;font-weight:900;color:var(--success-green)" id="golden-success">87%</div>
+            <div style="color:var(--text-secondary);font-size:0.9rem">Patients treated within Golden Hour</div>
+          </div>
+          <div style="flex:1">
+            <div class="progress-bar" style="height:16px;margin-bottom:var(--space-md)">
+              <div class="progress-bar-fill green" id="golden-bar" style="width:87%"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:0.8rem;color:var(--text-muted)">
+              <span>Target: 90%</span>
+              <span>Current: 87%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/hospitals-india.js?v=1"></script>
+  <script src="../js/ambulances-india.js?v=1"></script>
+  <script src="../js/data.js?v=5"></script>
+  <script src="../js/app.js?v=5"></script>
+  <script src="../js/admin.js?v=5"></script>
+</body>
+</html>

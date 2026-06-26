@@ -1,0 +1,278 @@
+/* ============================================================
+   GOLDEN HOUR — Dispatcher Dashboard Styles
+   ============================================================ */
+
+.dispatch-page {
+  padding-top: 64px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.dispatch-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  min-height: calc(100vh - 64px);
+}
+
+/* ── Map ── */
+.dispatch-map-side {
+  position: relative;
+}
+
+.dispatch-map-side #dispatch-map {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+.map-legend {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 400;
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.75rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* ── Panel ── */
+.dispatch-panel {
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 64px);
+  overflow: hidden;
+}
+
+.dispatch-panel-header {
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.dispatch-panel-header h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 1.1rem;
+}
+
+.dispatch-stats-bar {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+  overflow-x: auto;
+}
+
+.dispatch-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  min-width: 80px;
+}
+
+.dispatch-stat-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+.dispatch-stat-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Tabs ── */
+.dispatch-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.dispatch-tab {
+  flex: 1;
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dispatch-tab.active {
+  color: var(--medical-blue);
+  border-bottom-color: var(--medical-blue);
+}
+
+.dispatch-tab .tab-count {
+  background: var(--emergency-red);
+  color: white;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  margin-left: 4px;
+}
+
+/* ── Panel Content ── */
+.dispatch-panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-md);
+}
+
+/* ── Request Card ── */
+.request-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.request-card:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-sm);
+}
+
+.request-card.urgent {
+  border-left: 3px solid var(--emergency-red);
+}
+
+.request-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.request-card-header h5 {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.request-card-time {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.request-card-body {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.request-card-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+/* ── Ambulance List Item ── */
+.amb-list-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
+  transition: all var(--transition-fast);
+}
+
+.amb-list-item:hover {
+  border-color: var(--border-medium);
+}
+
+.amb-icon-wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.amb-icon-wrapper.available {
+  background: rgba(67, 160, 71, 0.15);
+}
+
+.amb-icon-wrapper.en-route {
+  background: rgba(255, 143, 0, 0.15);
+}
+
+.amb-icon-wrapper.busy {
+  background: rgba(229, 57, 53, 0.15);
+}
+
+.amb-icon-wrapper.offline {
+  background: rgba(100, 116, 139, 0.15);
+}
+
+.amb-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.amb-info h5 {
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.amb-info p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 1024px) {
+  .dispatch-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dispatch-map-side {
+    height: 350px;
+  }
+
+  .dispatch-panel {
+    border-left: none;
+    border-top: 1px solid var(--border-subtle);
+    max-height: none;
+  }
+}
